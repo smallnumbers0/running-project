@@ -6,8 +6,8 @@
         <div>
             <h1><%= item.location %></h1>
             <p><%= formatDate(item.date) %></p>
-            <h2><%= item.distance %></h2>
-            <p><%= item.pace %></p>
+            <h3><%= item.distance %> mi</h3>
+            <p>Pace: <%= item.pace %>/mi</p>
             <p>Comment: <%= item.comments%></p>
         </div>
     <% } %>
