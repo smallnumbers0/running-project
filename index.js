@@ -2,12 +2,18 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+const secret = process.env.SECRET
+const postgresPort = process.env.PORT
+
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
     database: "runproject",
-    password: "mango0920",
-    port: 5432,
+    password: secret,
+    port: postgresPort,
 })
 
 db.connect();
