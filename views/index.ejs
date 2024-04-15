@@ -1,26 +1,30 @@
 <%- include('parts/header.ejs') %>
 
 <body>
-    <h1><%= projectTitle %></h1>
-    <% for(let item of runList) { %>
-        <div>
-            <h1><%= item.location %></h1>
-            <p><%= formatDate(item.date) %></p>
-            <h3><%= item.distance %> mi</h3>
-            <p>Pace: <%= item.pace %>/mi</p>
-            <p>Comment: <%= item.comments%></p>
-        </div>
-    <% } %>
+    <h1 id="title"><%= projectTitle %></h1>
+    <div class="run-container">
+        <% for(let item of runList) { %>
+            <div class="data-container">
+                <div class="location-date-container">
+                    <h3 id="location-text"><%= item.location %></h1>
+                    <p id="date-text"><%= formatDate(item.date) %></p>
+                </div>
+                <div class="distance-pace-container">
+                    <p id="distance-text"><%= item.distance %> mi</h3>
+                    <p id="pace-text"><%= item.pace %>/mi</p>
+                </div>
+                <p>Comment: <%= item.comments%></p>
+            </div>
+        <% } %>
+    </div>
 </body>
 
-<%
+
+<% 
 function formatDate(date) {
     const formattedDate = new Date(date);
-    
-    const month = String(formattedDate.getMonth() + 1).padStart(2, '0'); // Adding 1 to get the correct month (months are zero-indexed)
-    const day = String(formattedDate.getDate()).padStart(2, '0'); // Pad the day with leading zero if necessary
-    const year = formattedDate.getFullYear(); // Get the full year
-    const formattedDateString = `${month}-${day}-${year}`;
+    const options = { month: 'long', day: 'numeric', year: 'numeric' };
+    const formattedDateString = formattedDate.toLocaleString('en-US', options);
     return formattedDateString;
 }
 %>
