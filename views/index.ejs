@@ -5,12 +5,31 @@
     <% for(let item of runList) { %>
         <div>
             <h1><%= item.location %></h1>
-            <p><%= item.date %></p>
+            <p><%= formatDate(item.date) %></p>
             <h2><%= item.distance %></h2>
             <p><%= item.pace %></p>
             <p>Comment: <%= item.comments%></p>
         </div>
     <% } %>
 </body>
+
+<%
+// Define the formatDate function
+function formatDate(date) {
+    // Create a new Date object from the date string
+    const formattedDate = new Date(date);
+    
+    // Extract the month, day, and year components from the date
+    const month = String(formattedDate.getMonth() + 1).padStart(2, '0'); // Adding 1 to get the correct month (months are zero-indexed)
+    const day = String(formattedDate.getDate()).padStart(2, '0'); // Pad the day with leading zero if necessary
+    const year = formattedDate.getFullYear(); // Get the full year
+    
+    // Combine the components to form the formatted date string
+    const formattedDateString = `${month}-${day}-${year}`;
+    
+    // Return the formatted date string
+    return formattedDateString;
+}
+%>
 
 <%- include('parts/footer.ejs') %>
