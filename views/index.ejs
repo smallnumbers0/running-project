@@ -1,0 +1,16 @@
+<%- include('parts/header.ejs') %>
+
+<body>
+    <h1><%= projectTitle %></h1>
+    <% for(let item of runList) { %>
+        <div>
+            <h1><%= item.location %></h1>
+            <p><%= item.date %></p>
+            <h2><%= item.distance %></h2>
+            <p><%= item.pace %></p>
+            <p>Comment: <%= item.comments%></p>
+        </div>
+    <% } %>
+</body>
+
+<%- include('parts/footer.ejs') %>
