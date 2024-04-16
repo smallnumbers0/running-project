@@ -1,45 +1,38 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
-
 import dotenv from 'dotenv';
+import { createClient } from '@supabase/supabase-js'
+
 dotenv.config();
-
-const secret = process.env.SECRET
-const postgresPort = process.env.PORT
-
-const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "runproject",
-    password: secret,
-    port: postgresPort,
-})
-
-db.connect();
 
 const app = express();
 const port = 3000;
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static("public")); 
+
+const supabaseUrl = 'https://reamqvucjdwylegwdnai.supabase.co'; //supabase details
+const supabaseKey = process.env.SUPABASE_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 let items = [];
 
 app.get("/", async (req, res) => {
 
     try {
-        const result = await db.query("SELECT * FROM run ");
-        items = result.rows;
+        const { data, error } = await supabase
+            .from('run')
+            .select('*');
+        items = data;
 
         res.render("index.ejs", {
             projectTitle: "Run Log",
             runList: items,
         });
     } catch(err) {
-        console.log(err);
+        console.error(err);
     }
-    
 });
 
 app.listen(port, () => {
