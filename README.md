@@ -1,8 +1,11 @@
 
 # The Running Project
 
-A website to track runs over time.
+A webserver to track runs over time.
 
+## Technologies Used:
+
+Express NodeJS EJS CSS postgreSQL SupabaseDB
 
 ## Authors
 
