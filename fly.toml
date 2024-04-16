@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for running-project on 2024-04-16T07:35:58-07:00
+# fly.toml app configuration file generated for running-project-polished-butterfly-4728 on 2024-04-16T07:45:20-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'running-project'
+app = 'running-project-polished-butterfly-4728'
 primary_region = 'sjc'
 
 [build]

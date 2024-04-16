@@ -9,5 +9,5 @@ A website to track runs over time.
 - [@smallnumbers0](https://www.github.com/smallnumbers0)
 
 ## Running Project
-- [@live server](https://running-project.onrender.com/)
+- [@live server](https://running-project.fly.dev/)
 
