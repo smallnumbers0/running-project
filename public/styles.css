@@ -95,11 +95,20 @@ html {
     font-weight: bold;
 }
 
+#comment-text {
+    font-size: 0.9rem;
+    text-wrap: wrap;
+    text-align: left;
+    width: 100%;
+}
+
 
 @media only screen and (max-width: 800px) {
     .run-container {
         flex-direction: column;
         margin: 0 auto;
+        min-width: 360px;
+        padding: 1rem;
     }
 
     .data-container {
@@ -120,6 +129,10 @@ html {
     }
 
     #distance-text, #pace-text {
+        font-size: 0.8rem;
+    }
+
+    #comment-text {
         font-size: 0.8rem;
     }
 }
