@@ -32,16 +32,17 @@ img {
     margin: 0 auto;
     border-radius: 5px;
     padding: 1rem;
+    max-width: 750px;
+    min-width: 375px;
 }
 
 .data-container {
     background-color: #873ec6;
     padding: 20px;
     border-radius: 10px;
-    max-width: 1000px;
-    min-width: 500px;
     border: 3px solid white;
     border-bottom: 3px solid rgb(132, 217, 132);
+    width: 100%;
     
 }
 
@@ -70,6 +71,7 @@ html {
 .location-date-container {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 #location-text {
@@ -91,4 +93,33 @@ html {
 
 #distance-text {
     font-weight: bold;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .run-container {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .data-container {
+        min-width: auto; 
+        max-width: 90%; 
+    }
+
+    #title {
+        font-size: 1.3rem;
+    }
+
+    #location-text {
+        font-size: 1.1rem; /* Decrease font size for smaller screens */
+    }
+
+    #date-text {
+        font-size: 0.8rem; 
+    }
+
+    #distance-text, #pace-text {
+        font-size: 0.8rem;
+    }
 }
