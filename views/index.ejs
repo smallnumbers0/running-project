@@ -1,22 +1,30 @@
 <%- include('parts/header.ejs') %>
 
 <body>
-    <h1 id="title"><%= projectTitle %></h1>
+    <div class="title-container">
+        <h1 id="title"><%= projectTitle %></h1>
+        <button id="add">add</button>
+    </div>
     <div class="run-container">
         <% for(let item of runList) { %>
-            <div class="data-container">
+            <section class="data-container">
                 <div class="location-date-container">
                     <h3 id="location-text"><%= item.location %></h1>
-                    <p id="date-text"><%= formatDate(item.date) %></p>
+                    <div class="utils">
+                        <button id="edit">Edit</button>
+                        <button id="delete">X</button>
+                    </div>
                 </div>
                 <div class="distance-pace-container">
+                    <p id="date-text"><%= formatDate(item.date) %></p>
                     <p id="distance-text"><%= item.distance %> mi</h3>
                     <p id="pace-text"><%= item.pace %>/mi</p>
                 </div>
                 <p id="comment-text">Comment: <%= item.comments%></p>
-            </div>
+            </section>
         <% } %>
     </div>
+    <script src="https://kit.fontawesome.com/0d8f725419.js" crossorigin="anonymous"></script>
 </body>
 
 

@@ -7,7 +7,7 @@ html {
     box-sizing: inherit;
     font-family: "Open Sans", sans-serif;
 }
-  
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
@@ -102,6 +102,43 @@ html {
     width: 100%;
 }
 
+.title-container {
+    display: flex;
+    gap: 1rem;
+    margin: 20px auto;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+#add {
+    position: relative;
+    top: 10px;
+}
+
+button {
+    border: 0.11rem solid rgb(255, 255, 255);;
+    border-radius: 5px;
+    background-color: rgb(132, 217, 132);;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+button:hover {
+    border: 0.11rem solid rgb(249, 0, 0);
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    font-family: "Open Sans", sans-serif;;
+}
+
+#title:hover {
+    color:aquamarine;
+}
+
+
 
 @media only screen and (max-width: 800px) {
     .run-container {
@@ -134,5 +171,9 @@ html {
 
     #comment-text {
         font-size: 0.8rem;
+    }
+
+    #edit, #delete, #add {
+        font-size: 0.7rem;
     }
 }
