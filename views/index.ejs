@@ -3,7 +3,7 @@
 <body>
     <div class="title-container">
         <h1 id="title"><%= projectTitle %></h1>
-        <button id="add">add</button>
+        <i id="add" class="material-icons">add</i>
     </div>
     <div class="run-container">
         <% for(let item of runList) { %>
@@ -11,8 +11,10 @@
                 <div class="location-date-container">
                     <h3 id="location-text"><%= item.location %></h1>
                     <div class="utils">
-                        <button id="edit">Edit</button>
-                        <button id="delete">X</button>
+                        <i id="edit" class="material-icons">edit</i>
+                        <i id="delete" class="material-icons">delete</i>
+                        
+                        
                     </div>
                 </div>
                 <div class="distance-pace-container">

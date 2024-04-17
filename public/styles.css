@@ -111,15 +111,41 @@ html {
     justify-content: center;
     align-items: center;
 }
+#edit, #delete {
+    color: rgb(132, 217, 132);
+    border: 0.3px solid white;
+    border-radius: 50%;
+    padding: 2px;
+    box-shadow: 0.5px 1px 1.3px solid white;
+}
+
+#edit:hover, #delete:hover {
+    color: rgb(255, 0, 0);
+}
+
 #add {
     position: relative;
     top: 10px;
+    color: rgb(132, 217, 132);
+    border: 1px solid white;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
-button {
+#add:hover {
+    position: relative;
+    top: 10px;
+    color: rgb(255, 0, 0);
+    border: 1px solid white;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: #873ec6;
+}
+
+/* button {
     border: 0.11rem solid rgb(255, 255, 255);;
     border-radius: 5px;
-    background-color: rgb(132, 217, 132);;
+    background-color: rgb(132, 217, 132);
     color: rgb(0, 0, 0);
     font-weight: bold;
     font-size: 0.8rem;
@@ -132,7 +158,7 @@ button:hover {
     color: rgb(255, 255, 255);
     transition: 0.3s;
     font-family: "Open Sans", sans-serif;;
-}
+} */
 
 #title:hover {
     color:aquamarine;
