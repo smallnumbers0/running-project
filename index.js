@@ -35,6 +35,10 @@ app.get("/", async (req, res) => {
     }
 });
 
+//ADD
+//UPDATE
+//DELETE
+
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
